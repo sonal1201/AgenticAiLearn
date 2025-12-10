@@ -4,7 +4,7 @@ import { z } from "zod"
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai"
 import { RunnableSequence } from "@langchain/core/runnables"
 
-//schema
+/// schema - this tells how the llms output will look like and their types ////
 
 const reviewExtract = z.object({
     rating: z.number(),
@@ -20,6 +20,8 @@ const reviveSummary = z.object({
 const reviewRecommendation = z.object({
     recommendation: z.string(),
 })
+
+/// ---- ////
 
 
 const extractModel = new ChatGoogleGenerativeAI({
@@ -37,7 +39,7 @@ const recommendationModel = new ChatGoogleGenerativeAI({
     temperature: 0,
 }).withStructuredOutput(reviewRecommendation)
 
-//chaining 
+/// chaining -> the output of the first model automatically become the input for second model //// 
 
 // const chain = RunnableSequence.from([
 //     async (input: { review: string }) => {
@@ -56,6 +58,8 @@ const recommendationModel = new ChatGoogleGenerativeAI({
 //         );
 //     },
 // ]);
+
+/// ---- ////
 
 const reviewText = `
 Amazing phone! Super fast performance and long battery life,
