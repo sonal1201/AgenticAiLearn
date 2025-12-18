@@ -1,0 +1,15 @@
+Document Loader is one of the components of the LangChain framework. It is responsible for loading documents from different sources. The documents are loaded in the form of Document objects that can be easily used by other components like LLMs, Text Splitters, Vector Stores, etc.
+
+The data sources could be PDFs, Word Files, Web Pages, CSV Files, etc. There is a separate class to load data from these documents.
+
+Document loaders play a foundational role in Retrieval-Augmented Generation (RAG). In RAG, we provide LLM with external data source to produce responses. Document loaders help in loading data into a standardized format Document object. We will be studying RAG concepts in the upcoming articles of this series, once we are familiar with all components of LangChain.
+
+Types of Document Loaders
+Depending upon the types of data sources, we have different classes to load documents. For example PDF, word, CSV files, web pages, etc. But these classes share a common working pattern.
+
+LangChain operates on Document objects, which are simple data structures containing:
+
+page_content: The text content of the document.
+metadata: Optional metadata such as file name, source, page number, etc.
+Text Loader
+TextLoader class is used to load text files with plain text. These files have .txt extension. Below is an example of how to load a text file using TextLoader

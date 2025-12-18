@@ -1,5 +1,5 @@
 # FEW SHORT PROMPTING
-# --> 
+# --> The model is feeded with few  example before asking it to generate a response.
 
 
 from dotenv import load_dotenv;
