@@ -23,8 +23,10 @@ splitter = CharacterTextSplitter(
     chunk_overlap = 0,
     separator =''
 )
-
+# text split 
 # result = splitter.split_text(docs)
+
+# docs split
 result = splitter.split_documents(docs)
 
 print(result[4].page_content)
