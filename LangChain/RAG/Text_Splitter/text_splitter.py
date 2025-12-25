@@ -5,9 +5,9 @@ LLMS can handle effectively
 
 Ways of TEXT SPLITTER
  - Text based splitter: Spliting by fixed token or char.
- - Text struture splitter: 
- - Docs struture splitter
- - Sementic meaning based splitter
+ - Text struture splitter:  RecusiveCharTextSplitter paragraph->linebreak->sentence->word->char
+ - Docs struture splitter: used to split docs which contain html,markdown,code text.
+ - Sementic meaning based splitter(still in experiment): Here we chunk the text/token based on the sementic meaning.
 '''
 
 from langchain_text_splitters import CharacterTextSplitter
